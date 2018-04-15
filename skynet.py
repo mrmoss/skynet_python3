@@ -39,17 +39,3 @@ def play_game(server,game_name,board):
 		return make_req(server,'/?play_game=true','{"name":"'+game_name+'","board":"'+board+'"}')
 	except Exception as error:
 		raise Exception('Error playing on game "'+game_name+'" - '+str(error))
-
-if __name__=='__main__':
-	try:
-		print(list_games('https://skynet.cs.uaf.edu'))
-		print(info_game('https://skynet.cs.uaf.edu','test'))
-		print(play_game('https://skynet.cs.uaf.edu','test','rrrrrrrrr_rr_r______bbbbbbbbbbbb'))
-		exit(0)
-
-	except KeyboardInterrupt:
-		exit(1)
-
-	except Exception as error:
-		print(error)
-		exit(1)
